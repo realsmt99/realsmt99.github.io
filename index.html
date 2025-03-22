@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- Progressive Web App (PWA) and Mobile Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="CNF">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="main.dart.js" as="script">
+  <link rel="preload" href="splash/img/light-1x.png" as="image">
+
+  <title>flutter_web</title>
+
+  <!-- Splash Screen Styles -->
+  <style>
+    html { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #ffffff;
+      background-size: 100% 100%;
+    }
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+    .contain { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .stretch { display: block; width: 100%; height: 100%; }
+    .cover { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .bottom { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+    .bottomLeft { position: absolute; bottom: 0; left: 0; }
+    .bottomRight { position: absolute; bottom: 0; right: 0; }
+  </style>
+
+  <!-- Flutter Initialization -->
+  <script>
+    const serviceWorkerVersion = "2168768016"; // Injected by Flutter build
+  </script>
+  <script type="module" src="flutter.js" defer></script>
+</head>
+
+<body>
+  <!-- Splash Screen -->
+  <picture id="splash">
+    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x"
+            media="(prefers-color-scheme: light)">
+    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x"
+            media="(prefers-color-scheme: dark)">
+    <img class="center" src="splash/img/light-1x.png" alt="" aria-hidden="true">
+  </picture>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { firebaseConfig } from "./firebase_json.js"; // Adjusted extension
+    const app = initializeApp(firebaseConfig);
+  </script>
+
+  <!-- Flutter Entrypoint -->
+  <script type="module">
+    window.addEventListener('load', async () => {
+      await _flutter.loader.loadEntrypoint({
+        serviceWorker: { serviceWorkerVersion },
+        onEntrypointLoaded: async (engineInitializer) => {
+          const appRunner = await engineInitializer.initializeEngine();
+          await appRunner.runApp();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
