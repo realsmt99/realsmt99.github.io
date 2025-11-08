@@ -8270,11 +8270,11 @@ j=J.cx(k)
 o="Compte_Rendu_"+(l.x+j.yz(k,new B.aH_(l)).e+"_MES_LIEN"+l.y)
 b7=$.aTf
 s=2
-return B.L(B.a6z("logo-sfr.png"),$async$iv)
+return B.L(B.a6z("assets/logo-sfr.png"),$async$iv)
 case 2:b7.b=c0
 b7=$.aTe
 s=3
-return B.L(B.a6z("keos-logo.jpeg"),$async$iv)
+return B.L(B.a6z("assets/keos-logo.jpeg"),$async$iv)
 case 3:b7.b=c0
 i=t.Sz
 h=B.b([],i)
