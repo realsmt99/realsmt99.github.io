@@ -8156,7 +8156,7 @@ aqV:function aqV(){},
 aiF(a,b){return A.aV8(a,b)},
 aV8(a,b){var s=0,r=A.Q(t.H),q=1,p=[],o,n,m,l,k,j,i,h,g,f
 var $async$aiF=A.R(function(c,d){if(c===1){p.push(d)
-s=q}while(true)switch(s){case 0:g=A.hB("http://localhost:3000/generate-report",0,null)
+s=q}while(true)switch(s){case 0:g=A.hB("https://docxi-report.fly.dev/generate-report",0,null)
 q=3
 A.iu("\u23f3 Requesting Report for: "+A.m(a))
 l=t.N
