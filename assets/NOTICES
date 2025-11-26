@@ -5750,6 +5750,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 --------------------------------------------------------------------------------
 flutter_shaders
+go_router
 path_provider
 path_provider_linux
 path_provider_platform_interface
